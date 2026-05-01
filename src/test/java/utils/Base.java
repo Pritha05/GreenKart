@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import stepDefinitions.Hooks;
 
 public class Base {
 
@@ -31,6 +32,7 @@ public class Base {
                 WebDriverManager.chromedriver().setup();
 
                 driver = new ChromeDriver();
+                Hooks.driver = driver;
             }
 
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
